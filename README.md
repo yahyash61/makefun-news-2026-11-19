@@ -29,23 +29,25 @@ publication date. Review the source material before changing the story copy.
 
 ## Run
 
-From the project root, run:
+From the project root, run the original renderer with Python 3.13 or newer:
 
 ```sh
-node --experimental-strip-types main.ts
+python3 news_image.py
 ```
 
-The program reads `news.json` from the project root and creates the output
-directory if needed. On Linux, it writes to `/output/entry.png`. On Windows,
-it writes to the project-local `output/entry.png` folder. The PNG is 960 x 960
-pixels and the program rejects output larger than 1 MiB.
+On Windows, use `py news_image.py`. The script reads `news.json` from the
+project root and writes `output/entry.png` there, or to the directory named by
+`MAKEFUN_OUTPUT_DIR` when that variable is set. It uses only the Python
+standard library.
 
-No package installation or network access is needed. The renderer uses fixed
-layout, colors, bitmap glyphs, PNG chunk order, and compression settings to
-produce repeatable output in the same Node.js/zlib environment.
+`main.ts` is the packed Make.fun entrypoint generated from `news_image.py` by
+the kit's `makefun compress` command. Keep the Python source as the renderer;
+repack `main.ts` after changing that source. The PNG is 960 x 960 pixels and
+under 1 MiB. No package installation or network access is needed to render it.
 
 ## Project files
 
-- `main.ts` contains the renderer, bitmap font, validation, and PNG encoder.
+- `news_image.py` contains the renderer, bitmap font, and PNG encoder.
+- `main.ts` is the compressed Make.fun entrypoint generated from the Python source.
 - `news.json` contains the three story records and their citations.
 - `LICENSE` contains the MIT License terms.
