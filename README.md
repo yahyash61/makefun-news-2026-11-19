@@ -5,12 +5,8 @@ Competition: [make.fun news-image-20261119 bounty](https://make.fun/bounty/news-
 # World in Focus
 
 A deterministic, dependency-free newspaper infographic generator for a 960 x
-960 pixel PNG. It uses only Node.js built-in modules at runtime, draws text
-with an embedded bitmap font, and does not rely on system fonts or external
-images.
-
-The project was successfully tested with **Node.js 26.13.1**. This statement
-does not claim that Node.js 22 was tested.
+960 pixel PNG. It uses only Python's standard library, draws text with an
+embedded bitmap font, and does not rely on system fonts or external images.
 
 ## News in this edition
 
@@ -40,14 +36,14 @@ project root and writes `output/entry.png` there, or to the directory named by
 `MAKEFUN_OUTPUT_DIR` when that variable is set. It uses only the Python
 standard library.
 
-`main.ts` is the packed Make.fun entrypoint generated from `news_image.py` by
+`main.py` is the packed Make.fun entrypoint generated from `news_image.py` by
 the kit's `makefun compress` command. Keep the Python source as the renderer;
-repack `main.ts` after changing that source. The PNG is 960 x 960 pixels and
+repack `main.py` after changing that source. The PNG is 960 x 960 pixels and
 under 1 MiB. No package installation or network access is needed to render it.
 
 ## Project files
 
 - `news_image.py` contains the renderer, bitmap font, and PNG encoder.
-- `main.ts` is the compressed Make.fun entrypoint generated from the Python source.
+- `main.py` is the compressed Make.fun entrypoint generated from the Python source.
 - `news.json` contains the three story records and their citations.
 - `LICENSE` contains the MIT License terms.
