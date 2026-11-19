@@ -1,3 +1,7 @@
+[![Competition](https://make.fun/badge/news-image-20261119.svg)](https://make.fun/bounty/news-image-20261119) [![Rank](https://make.fun/badge/news-image-20261119/yahyash61/makefun-news-2026-11-19/rank.svg)](https://make.fun/bounty/news-image-20261119) [![Reward](https://make.fun/badge/news-image-20261119/yahyash61/makefun-news-2026-11-19/reward.svg)](https://make.fun/bounty/news-image-20261119)
+
+Competition: [make.fun news-image-20261119 bounty](https://make.fun/bounty/news-image-20261119)
+
 # World in Focus
 
 A deterministic, dependency-free newspaper infographic generator for a 960 x
